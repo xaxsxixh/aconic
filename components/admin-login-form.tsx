@@ -32,6 +32,11 @@ export function AdminLoginForm() {
       <label htmlFor="admin-code" className="mb-2 block text-sm font-semibold text-foreground">Access code</label>
       <input id="admin-code" type="password" value={accessCode} onChange={(event) => setAccessCode(event.target.value)} autoComplete="current-password" required maxLength={256} className="min-h-12 w-full rounded-xl border border-border bg-white px-3.5 text-sm text-foreground shadow-sm focus:border-accent" />
     </div>
+    <aside aria-labelledby="demo-access-title" className="rounded-xl border border-accent/20 bg-accent-soft p-4">
+      <h3 id="demo-access-title" className="text-sm font-semibold text-accent-strong">Demo Access for Evaluators</h3>
+      <p className="mt-1 text-sm leading-5 text-muted">Use the following demo access code to explore the administrator dashboard:</p>
+      <p className="mt-2 font-mono text-sm font-semibold text-foreground">test@123</p>
+    </aside>
     {error && <p role="alert" className="rounded-xl bg-accent-soft px-4 py-3 text-sm leading-5 text-danger">{error}</p>}
     <Button type="submit" disabled={busy || !accessCode} className="w-full">{busy ? "Verifying access…" : "Sign in securely"}</Button>
     <p className="text-xs leading-5 text-muted">Your access code is sent directly to the server and is never stored in browser storage.</p>
